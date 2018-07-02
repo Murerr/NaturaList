@@ -8,10 +8,11 @@ import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main.*
 import android.R.attr.fragment
+import android.util.Log
 
 
+class MainActivity : AppCompatActivity(), HomeFragment.TimePickerFragment.OnDateReceiveCallBack {
 
-class MainActivity : AppCompatActivity() {
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
@@ -44,5 +45,9 @@ class MainActivity : AppCompatActivity() {
             return true
         }
         return false
+    }
+
+    override fun onDateReceive(hourOfDay: Int, minute: Int) {
+        Log.d("onDateReceive",hourOfDay.toString() + ":" + minute.toString())
     }
 }

@@ -9,4 +9,6 @@
     <string name="species">Espèce</string>
     <string name="time">Heure</string>
     <string name="location">Position</string>
+    <string name="category">Categorie</string>
+    <string name="date">Date</string>
 </resources>
