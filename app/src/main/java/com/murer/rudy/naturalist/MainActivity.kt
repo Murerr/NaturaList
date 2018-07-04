@@ -3,15 +3,11 @@ package com.murer.rudy.naturalist
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
-
 import android.support.v7.app.AppCompatActivity
-import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main.*
-import android.R.attr.fragment
-import android.util.Log
 
 
-class MainActivity : AppCompatActivity(), HomeFragment.TimePickerFragment.OnDateReceiveCallBack {
+class MainActivity : AppCompatActivity(){
 
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
@@ -47,7 +43,4 @@ class MainActivity : AppCompatActivity(), HomeFragment.TimePickerFragment.OnDate
         return false
     }
 
-    override fun onDateReceive(hourOfDay: Int, minute: Int) {
-        Log.d("onDateReceive",hourOfDay.toString() + ":" + minute.toString())
-    }
 }

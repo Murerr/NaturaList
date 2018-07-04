@@ -24,3 +24,4 @@ fun Fragment.navigateTo(cls:Class<*>, extras:Map<String, String>? = null) {
     //this.activity.navigateTo(cls, extras)
     this.activity?.navigateTo(cls, extras)
 }
+

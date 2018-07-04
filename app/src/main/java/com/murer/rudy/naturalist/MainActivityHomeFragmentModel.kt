@@ -1,6 +1,5 @@
 package com.murer.rudy.naturalist
 
-import java.time.Month
 import java.util.*
 
 interface HomeFragmentModel {
@@ -34,8 +33,8 @@ class HomeFragmentModelImpl(
         val month = c.get(Calendar.MONTH) + 1 // month is 0 to 11
         val year = c.get(Calendar.YEAR)
 
-        var dayToDisplay: String = ""
-        var monthToDisplay: String = ""
+        var dayToDisplay = ""
+        var monthToDisplay = ""
 
         if (day < 10) {
             dayToDisplay += "0" + day.toString()
