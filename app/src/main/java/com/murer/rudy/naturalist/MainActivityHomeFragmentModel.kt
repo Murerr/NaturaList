@@ -16,12 +16,16 @@ interface HomeFragmentModel {
     fun getCurrentTime(): String
 
     fun getCurrentDate(): String
+
+
 }
 // add data class here
 
 class HomeFragmentModelImpl(
         // add Managers here
 ) : HomeFragmentModel {
+
+
     override fun getCurrentTime(): String {
         val c = Calendar.getInstance()
         return StringBuilder().append(c.get(Calendar.HOUR_OF_DAY)).append(":").append(c.get(Calendar.MINUTE)).toString()
@@ -46,6 +50,8 @@ class HomeFragmentModelImpl(
 
         return StringBuilder().append(dayToDisplay).append("/").append(monthToDisplay).append("/").append(year).toString()
     }
+
+
 
 
 }
