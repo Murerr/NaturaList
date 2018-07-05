@@ -1,17 +1,16 @@
 package com.murer.rudy.naturalist
 
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
-
 import android.support.v7.app.AppCompatActivity
-import android.view.MenuItem
+import com.murer.rudy.naturalist.HomeFragment.Companion.LOCATION_REQUEST_CODE
 import kotlinx.android.synthetic.main.activity_main.*
-import android.R.attr.fragment
 
 
+class MainActivity : AppCompatActivity(){
 
-class MainActivity : AppCompatActivity() {
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
@@ -45,4 +44,17 @@ class MainActivity : AppCompatActivity() {
         }
         return false
     }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
+        when (requestCode) {
+            LOCATION_REQUEST_CODE -> // ask permission for camera
+                if (grantResults.size == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                   // do
+                } //else //do
+
+            else ->
+                super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        }
+    }
+
 }

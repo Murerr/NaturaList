@@ -1,86 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <include layout="@layout/toolbar_layout" />
 
-    <LinearLayout
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        style="@android:style/Widget.Material.ScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="?android:attr/actionBarSize"
-        android:orientation="vertical">
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="?android:attr/actionBarSize"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:paddingBottom="56dp"
+        android:scrollbars="horizontal"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:ignore="PrivateResource">
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical|center_horizontal"
-            android:text="@string/title_home"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-            android:textColor="@color/colorPrimary" />
+            android:divider="?android:listDivider"
+            android:dividerPadding="16dp"
+            android:orientation="vertical"
+            android:showDividers="none">
 
-        <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            app:iconSignifier="@drawable/ic_flower_black_24px"
-            app:labelText="@string/species"
-            app:primaryColor="@color/colorPrimary">
-
-            <studio.carbonylgroup.textfieldboxes.ExtendedEditText
-                android:id="@+id/species"
-                android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textAutoComplete" />
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/title_home"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:textColor="@color/colorPrimary" />
 
-        </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
-
-        <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            app:iconSignifier="@drawable/ic_time_black_24dp"
-            app:labelText="@string/time"
-            app:primaryColor="@color/colorPrimary">
-
-            <studio.carbonylgroup.textfieldboxes.ExtendedEditText
-                android:id="@+id/time"
-                android:layout_width="wrap_content"
+            <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textAutoComplete" />
+                android:layout_marginBottom="16dp"
+                app:iconSignifier="@drawable/ic_category_black_24px"
+                app:labelText="@string/category"
+                app:primaryColor="@color/colorPrimary">
 
-        </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+                <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                    android:id="@+id/category"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textAutoComplete" />
+            </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
 
-        <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            app:iconSignifier="@drawable/ic_location_black_24px"
-            app:labelText="@string/location"
-            app:primaryColor="@color/colorPrimary">
-
-            <studio.carbonylgroup.textfieldboxes.ExtendedEditText
-                android:id="@+id/dish_price"
-                android:layout_width="wrap_content"
+            <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textAutoComplete" />
+                android:layout_marginBottom="16dp"
+                app:iconSignifier="@drawable/ic_flower_black_24px"
+                app:labelText="@string/species"
+                app:primaryColor="@color/colorPrimary">
 
-        </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+                <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                    android:id="@+id/species"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textAutoComplete" />
 
-        <ProgressBar
-            android:id="@+id/progressbar"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:backgroundTint="@color/colorPrimaryDark"
-            android:indeterminate="true"
-            android:indeterminateTint="@color/colorAccent"
-            android:max="100"
-            android:visibility="gone" />
+            </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
 
-    </LinearLayout>
+            <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:iconSignifier="@drawable/ic_location_black_24px"
+                app:labelText="@string/location"
+                app:primaryColor="@color/colorPrimary">
+
+                <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                    android:id="@+id/mlocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textAutoComplete" />
+
+            </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+            <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:iconSignifier="@drawable/ic_date_black_24px"
+                app:labelText="@string/date"
+                app:primaryColor="@color/colorPrimary">
+
+                <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                    android:id="@+id/mdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="date" />
+
+            </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+            <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:iconSignifier="@drawable/ic_time_black_24dp"
+                app:labelText="@string/time"
+                app:primaryColor="@color/colorPrimary">
+
+                <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                    android:id="@+id/mtime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="time" />
+            </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+
+
+
+            <ProgressBar
+                android:id="@+id/progressbar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/colorAccent"
+                android:max="100"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </ScrollView>
+
 
 </RelativeLayout>
 
